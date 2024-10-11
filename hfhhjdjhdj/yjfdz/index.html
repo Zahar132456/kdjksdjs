@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><h2>Coffee blog</h2></td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Drink name</b><input name="title" placeholder="Americano">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Coffee variety</b><select name="sort">
+                        <option>Arabica</option>
+                        <option>Robusta</option>
+                        <option>Excelsa</option>
+                        <option>Liberica</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="radio" name="strong" value="3"/>
+                                <label>Strong</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Roast strength</b></td>
+                            <td>
+                                <input type="radio" name="strong" value="2" checked />
+                                <label>Average</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="radio" name="strong" value="1" />
+                                <label>Light</label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Picture</b><input name="image" placeholder="http://site.com/img.png">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Cost of drink</b><input name="cost" placeholder="100">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Description</b><textarea name="description" placeholder="About the drink"></textarea>
+                </td>
+            </tr>
+        </table>
+    <input type="submit" value="Submit">
+    </form>
+    <br>
+    <table id="table">
+        <thead>
+            <tr>
+                <td id="td"><b>Image</b></td>
+                <td id="td"><b>Name</b></td>
+                <td id="td"><b>Variety</b></td>
+                <td id="td"><b>Roast strength</b></td>
+                <td id="td"><b>Cost</b></td>
+                <td id="td"><b>Description</b></td>
+            </tr>
+        </thead>
+    </table>
+</body>
+<script> 
+    const f = document.forms[0]; 
+    let tr = document.getElementById("table"); 
+    let t = tr; 
+    f.addEventListener("submit", (e) => { 
+        e.preventDefault(); 
+        let body = {}; 
+        for (let i = 0; i < f.elements.length; i++) { 
+            let tag = f[i]; 
+            if (tag.name) { 
+                if (tag.type === "radio" && tag.checked) { 
+                    body[tag.name] = tag.value; 
+                } else if (tag.type !== "radio") { 
+                    body[tag.name] = tag.value; 
+                } 
+            } 
+        } 
+        console.log(body); 
+        let html = "<tr>"; 
+        html += `<td><img src="${body.image}" width="50" alt="${body.title}"></td>`; 
+        html += `<td>${body.title || ""}</td>`; 
+        html += `<td>${body.sort || ""}</td>`; 
+        html += `<td>${body.strong || ""}</td>`; 
+        html += `<td>${body.cost || ""}</td>`; 
+        html += `<td>${body.description || ""}</td>`; 
+        html += "</tr>" 
+        t.innerHTML += html; 
+    }) 
+</script>
+</html>

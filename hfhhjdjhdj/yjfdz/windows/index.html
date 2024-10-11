@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>win 8 pro</title>
+    <style>
+      body {
+        margin: 0;
+        color: #c4c4c4;
+      }
+      header {
+        font-size: 0;
+        margin: 0 50px 50px 0;
+        display: flex;
+        align-items: center;
+      }
+      h1, h3 {
+        width: 50%;
+        vertical-align: top;
+      }
+      main {
+        height: 600px;
+        font-size: 0;
+        overflow-x: auto;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h3 {
+        font-size: 2rem;
+        text-align: right;
+      }
+      .scroll {
+        width: 10000px;
+        padding-right: 50px;
+        display: flex;
+        align-items: center;
+      }
+      .group {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+      }
+      .column {
+        height: 540px;
+        width: 210px;
+        margin-right: 10px;
+      }
+      .kubiki {
+        height: calc(100vh - 100px);
+        padding: 50px 0 50px 50px;
+        background-color: rgb(47, 47, 47);
+      }
+      .minikub {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        display: inline-block;
+      }
+      .line {
+        width: 210px;
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      .bkub {
+        width: 210px;
+        height: 210px;
+        margin-bottom: 10px;
+      }      
+      .mr {
+        margin-right: 0;
+      }
+      .mb {
+        margin-bottom: 0;
+      }
+      .group_1 *:not(.column) {
+        background: rgb(220, 0, 176);
+      }
+      .group_2 *:not(.column) {
+        background: rgb(247, 70, 0);
+      }
+      .group_3 *:not(.column) {
+        background: rgb(255, 212, 19);
+      }
+      .group_4 *:not(.column) {
+        background: rgb(0, 224, 0);
+      }
+      .group_5 *:not(.column) {
+        background: rgb(0, 194, 194);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kubiki">
+      <header>
+        <h1>windows 8 pro</h1>
+        <h3>юзер</h3>
+      </header>
+      <main>
+        <div class="scroll">
+          <div class="group group_1">
+            <div class="column">
+              <div class="minikub"></div>
+              <div class="minikub mr"></div>
+              <div class="line"></div>
+              <div class="bkub mb"></div>
+            </div>
+          </div>
+          <div class="group group_2">
+            <div class="column">
+              <div class="line"></div>
+              <div class="minikub"></div>
+              <div class="minikub mr"></div>
+              <div class="line"></div>
+              <div class="minikub"></div>
+              <div class="minikub mr"></div>
+              <div class="line"></div>
+            </div>
+            <div class="column">
+              <div class="bkub"></div>
+            </div>
+          </div>
+          <div class="group group_3">
+            <div class="column">
+              <div class="minikub"></div>
+              <div class="minikub mr"></div>
+            </div>
+          </div>
+          <div class="group group_4">
+            <div class="column">
+              <div class="bkub"></div>
+              <div class="minikub mr"></div>
+              <div class="bkub"></div>
+              <div class="minikub mr"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
